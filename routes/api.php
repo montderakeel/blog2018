@@ -18,6 +18,4 @@ use Illuminate\Http\Request;
     //return $request->user();
 //});
 
-Route::resource('posts', 'PostController', ['only' => [
-    'index', 'show', 'store', 'destroy'
-]]);
+Route::apiresource('posts', 'PostController');
