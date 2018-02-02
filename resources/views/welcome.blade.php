@@ -10,11 +10,13 @@
     </head>
 
     <body>
-        <div id="app">
-            <br>
-            <div class="container">
-                <test-component></test-component>
-            </div>
+        <div id="container">
+            @if(Auth::check())
+                <a href="/profile">Profile</a>
+                <a href="/logout">Logout</a>
+            @else
+                <a href="/login">Login</a>
+            @endif
         </div>
 
         <script src="{{ asset('js/app.js') }}"></script>

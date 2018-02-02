@@ -13,6 +13,8 @@
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('root');
 
-Route::auth();
+Route::get('login', 'AuthController@ShowLoginForm')->name('getLogin');
+Route::post('login', 'AuthController@login')->name('login');
+Route::get('logout', 'AuthController@logout')->name('logout');
