@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Auth;
 use Redirect;
+use Session;
 
 class AuthController extends Controller
 {
@@ -29,6 +30,8 @@ class AuthController extends Controller
     public function logout()
     {
         Auth::logout();
+        Session::flush();
+
         return Redirect::route('getLogin');
     }
 }

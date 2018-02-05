@@ -18,3 +18,9 @@ Route::get('/', function () {
 Route::get('login', 'AuthController@ShowLoginForm')->name('getLogin');
 Route::post('login', 'AuthController@login')->name('login');
 Route::get('logout', 'AuthController@logout')->name('logout');
+
+Route::get('/profile', 'ProfileController@index')->name('profile')->middleware('auth');
+Route::get('/edit-profile', 'ProfileController@editProfile')->name('edit.profile')->middleware('auth');
+Route::put('/profile', 'ProfileController@updateProfile')->name('update.profile')->middleware('auth');
+
+Route::resource('/tvshow', 'TvshowController')->middleware('auth');

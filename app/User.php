@@ -9,6 +9,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function tvshows()
+    {
+        return $this->hasMany('App\Tvshow', 'user_id');
+    }
+
     /**
      * The attributes that are mass assignable.
      *

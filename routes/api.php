@@ -18,4 +18,4 @@ use Illuminate\Http\Request;
     //return $request->user();
 //});
 
-Route::apiresource('posts', 'PostController');
+// Route::apiresource('posts', 'PostController');
